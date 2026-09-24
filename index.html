@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MUGEN and Wan360: a large-scale panoramic video dataset and camera-controllable 360° video generation. SIGGRAPH Asia 2026.">
+  <meta name="theme-color" content="#126166">
+  <title>Interactive Panoramic World Exploration via Camera Control</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><a class="wordmark" href="#">MUGEN <span>/ Wan360</span></a><nav aria-label="Main navigation"><a href="#results">Results</a><a href="#dataset">Dataset</a><a href="#method">Method</a><a href="#citation">Citation</a></nav></header>
+<main id="main">
+  <section class="hero">
+    <p class="eyebrow">SIGGRAPH Asia 2026 · Conference Papers</p>
+    <h1>Interactive Panoramic<br class="desktop"> World Exploration<br class="desktop"> <span>via Camera Control</span></h1>
+    <div class="authors">
+      <span>Jiaming Tan<sup>1,2,*</sup></span><span>Zhen Li<sup>2</sup></span><span>Shuwei Shi<sup>2</sup></span><span>Minggui Teng<sup>2</sup></span><span>Siqi Yang<sup>2</sup></span><span>Yuwei Wu<sup>1,3,†</sup></span><span>Bo Zheng<sup>2</sup></span><span>Kaipeng Zhang<sup>2,†</sup></span><span>Chuanhao Li<sup>2,†</sup></span>
+    </div>
+    <p class="affiliations"><span><sup>1</sup> Beijing Institute of Technology</span><span><sup>2</sup> Alaya Lab</span><span><sup>3</sup> Shenzhen MSU-BIT University</span></p>
+    <p class="notes">* Work done during an internship in Alaya Lab. &nbsp; † Corresponding authors.</p>
+    <div class="actions"><a class="button primary" href="assets/paper.pdf">Paper <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/AlayaLab/MUGEN">Code &amp; Data <span aria-hidden="true">↗</span></a><a class="button" href="#results">Video Results <span aria-hidden="true">↓</span></a></div>
+  </section>
+  <figure class="overview"><img src="assets/overview.webp" width="1800" height="661" alt="MUGEN combines high-resolution panoramic videos with camera trajectories, instance masks, depth maps, and semantic annotations."><figcaption>A data foundation and a camera-controllable model for panoramic world exploration.</figcaption></figure>
+  <section class="abstract" id="abstract"><p class="eyebrow">Overview</p><h2>Explore beyond the frame.</h2>
+    <p>Interactive panoramic video generation aims to synthesize immersive 360° videos that remain visually coherent while following user-specified camera trajectories during exploration. However, progress is limited by a coupled data-and-model gap: existing panoramic video datasets are often short, weakly annotated, or lack camera trajectories, while existing camera-controlled video generation models are designed for perspective videos and do not directly support panoramic geometry.</p>
+    <p>We introduce <strong>MUGEN</strong>, a large-scale real-world panoramic video dataset with over 1,300 hours of at least 4K videos and rich semantic and geometric annotations, and <strong>Wan360</strong>, a camera-controllable panoramic video generation model. Wan360 adapts a perspective video backbone with three parameter-free ERP-aware components and a panoramic Plücker embedding, enabling high-quality, temporally coherent 360° video generation.</p>
+  </section>
+  <section id="results"><div class="section-head"><div><p class="eyebrow">01 / Generation</p><h2>A panorama. A trajectory. A world in motion.</h2></div><p>Wan360 generates panoramic videos conditioned on an input panorama, a text prompt, and a target camera trajectory.</p></div>
+    <div class="videos"><figure><video controls muted loop playsinline preload="none" poster="assets/garden.jpg" aria-label="Generated panoramic video of a tree-lined outdoor scene"><source src="assets/garden.mp4" type="video/mp4">Your browser does not support video. <a href="assets/garden.mp4">Download the video.</a></video><figcaption><span>Tree-lined outdoor scene</span><span>Forward camera motion</span></figcaption></figure><figure><video controls muted loop playsinline preload="none" poster="assets/street.jpg" aria-label="Second generated panoramic video with forward camera motion"><source src="assets/street.mp4" type="video/mp4">Your browser does not support video. <a href="assets/street.mp4">Download the video.</a></video><figcaption><span>Panoramic scene</span><span>Forward camera motion</span></figcaption></figure></div><p class="notes">Generated videos are shown in equirectangular projection (ERP).</p>
+  </section>
+  <section id="dataset"><div class="section-head"><div><p class="eyebrow">02 / Dataset</p><h2>MUGEN</h2></div><p>Real-world panoramic videos with captions, scene attributes, locations, camera trajectories, instance masks, and depth.</p></div>
+    <dl class="stats"><div><dt>1,318<span> hours</span></dt><dd>Curated panoramic footage</dd></div><div><dt>≥ 4K</dt><dd>Source video resolution</dd></div><div><dt>60<span> seconds</span></dt><dd>Continuous clips</dd></div><div><dt>300<span> hours</span></dt><dd>MUGEN-HQ training subset</dd></div></dl>
+    <figure class="paper-figure"><a href="assets/dataset.webp" aria-label="Open full-size MUGEN curation pipeline"><img src="assets/dataset.webp" width="1800" height="572" loading="lazy" alt="MUGEN curation pipeline: collection, preprocessing, semantic and geometric annotation, quality filtering, and high-quality subset sampling."></a><figcaption>From 2,893 hours of source footage to MUGEN: systematic annotation and quality filtering, followed by stratified sampling for MUGEN-HQ.</figcaption></figure>
+  </section>
+  <section id="method"><div class="section-head"><div><p class="eyebrow">03 / Method</p><h2>Wan360</h2></div><p>Adapting perspective video generation to the geometry of a 360° world.</p></div>
+    <figure class="paper-figure"><a href="assets/method.webp" aria-label="Open full-size Wan360 architecture"><img src="assets/method.webp" width="1800" height="719" loading="lazy" alt="Wan360 architecture with random roll yaw, ERP-aware padding, periodic longitude RoPE, and panoramic Plücker embeddings."></a></figure>
+    <div class="method-notes"><div><h3>Panorama-aware generation</h3><p>Periodic longitude RoPE, ERP-aware padding, and random roll yaw address cyclic seams and yaw consistency without adding trainable parameters.</p></div><div><h3>Camera trajectory control</h3><p>A panoramic Plücker embedding represents camera motion using spherical ERP rays in place of perspective pinhole rays.</p></div></div>
+  </section>
+  <section id="citation"><div class="citation-head"><div><p class="eyebrow">Reference</p><h2>Citation</h2></div><button id="copy-citation" type="button">Copy BibTeX</button></div><pre><code id="bibtex">@inproceedings{tan2026panoramic,
+  title = {Interactive Panoramic World Exploration via Camera Control},
+  author = {Tan, Jiaming and Li, Zhen and Shi, Shuwei and Teng, Minggui
+            and Yang, Siqi and Wu, Yuwei and Zheng, Bo
+            and Zhang, Kaipeng and Li, Chuanhao},
+  booktitle = {SIGGRAPH Asia 2026 Conference Papers},
+  year = {2026},
+  doi = {10.1145/3829340.3842301}
+}</code></pre><p id="copy-status" class="notes" role="status" aria-live="polite"></p></section>
+</main>
+<footer><span>MUGEN / Wan360</span><span>SIGGRAPH Asia 2026</span></footer>
+<script src="script.js"></script>
+</body>
+</html>
