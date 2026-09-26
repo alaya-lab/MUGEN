@@ -3,8 +3,8 @@
 .hero{padding:48px 0 26px}
 .hero h1{max-width:1056px;margin:0 auto 22px;font-size:clamp(1.75rem,3.65vw,2.75rem);line-height:1.18;letter-spacing:-.035em;text-wrap:balance;font-weight:700}
 .hero .title-main{display:block;color:var(--ink)}
-.hero .title-sub{display:block;color:var(--accent);margin-top:6px}
-.venue{margin:0 0 26px;color:var(--accent);font-size:clamp(1.65rem,3vw,2rem);font-weight:700;line-height:1.35;letter-spacing:.01em}
+.hero .title-sub{display:block;color:#111;margin-top:6px}
+.venue{margin:0 0 26px;color:var(--accent);font-size:clamp(1.35rem,2.4vw,1.6rem);font-weight:700;line-height:1.35;letter-spacing:.01em}
 .intro-video{margin:0 0 28px}
 .intro-video video{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;background:#fff}
 .intro-video figcaption{text-align:center;margin-top:8px}
