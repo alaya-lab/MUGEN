@@ -13,8 +13,8 @@
 <header class="nav"><a class="wordmark" href="#">MUGEN <span>/ Wan360</span></a><nav aria-label="Main navigation"><a href="#results">Results</a><a href="#dataset">Dataset</a><a href="#method">Method</a><a href="#citation">Citation</a></nav></header>
 <main id="main">
   <section class="hero">
-    <p class="eyebrow">SIGGRAPH Asia 2026 · Conference Papers</p>
     <h1>Interactive Panoramic<br class="desktop"> World Exploration<br class="desktop"> <span>via Camera Control</span></h1>
+    <p class="venue">SIGGRAPH Asia 2026</p>
     <div class="authors">
       <span>Jiaming Tan<sup>1,2,3,*</sup></span><span>Zhen Li<sup>2</sup></span><span>Shuwei Shi<sup>2</sup></span><span>Minggui Teng<sup>2</sup></span><span>Siqi Yang<sup>2</sup></span><span>Yuwei Wu<sup>1,3,†</sup></span><span>Bo Zheng<sup>2</sup></span><span>Kaipeng Zhang<sup>2,†</sup></span><span>Chuanhao Li<sup>2,†</sup></span>
     </div>
@@ -22,6 +22,10 @@
     <p class="notes">* Work done during an internship in Alaya Lab. &nbsp; † Corresponding authors.</p>
     <div class="actions"><a class="button primary" href="assets/paper.pdf">Paper <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/AlayaLab/MUGEN">Code &amp; Data <span aria-hidden="true">↗</span></a><a class="button" href="#results">Video Results <span aria-hidden="true">↓</span></a></div>
   </section>
+  <figure class="intro-video" id="introduction">
+    <video controls playsinline preload="none" poster="assets/introduce.jpg" width="2160" height="1080" aria-label="MUGEN and Wan360 project introduction"><source src="assets/introduce.mp4" type="video/mp4">Your browser does not support video. <a href="assets/introduce.mp4">Download the introduction video.</a></video>
+    <figcaption>Project introduction</figcaption>
+  </figure>
   <figure class="overview"><img src="assets/overview.webp" width="1800" height="661" alt="MUGEN combines high-resolution panoramic videos with camera trajectories, instance masks, depth maps, and semantic annotations."><figcaption>A data foundation and a camera-controllable model for panoramic world exploration.</figcaption></figure>
   <section class="abstract" id="abstract"><p class="eyebrow">Overview</p><h2>Explore beyond the frame.</h2>
     <p>Interactive panoramic video generation aims to synthesize immersive 360° videos that remain visually coherent while following user-specified camera trajectories during exploration. However, progress is limited by a coupled data-and-model gap: existing panoramic video datasets are often short, weakly annotated, or lack camera trajectories, while existing camera-controlled video generation models are designed for perspective videos and do not directly support panoramic geometry.</p>
